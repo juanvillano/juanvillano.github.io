@@ -1,0 +1,40 @@
+
+html {
+    font-family: "Helvetica", sans-serif;
+}
+
+h2 {
+    font-family: "Helvetica", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+}
+
+
+strong {
+    font-family: "Helvetica", sans-serif;
+    font-weight: bold;
+    color: blue;
+}
+
+#hero h1 {
+    background-image: url("../images/pattern.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
+    color: khaki;
+}
+
+#brushes_section h2 {
+    background-color: mediumspringgreen;
+}
+
+#frames_section h2 {
+    background-color: lightcoral;
+}
+
+#paint_section h2 {
+    background-color: skyblue;
+}
