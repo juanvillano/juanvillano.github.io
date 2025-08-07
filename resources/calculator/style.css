@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #87CEEB, #98D8E8);
+    transition: background 0.8s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Weather backgrounds */
+body.clear-day {
+    background: linear-gradient(135deg, #87CEEB, #98D8E8);
+}
+
+body.cloudy {
+    background: linear-gradient(135deg, #B0C4DE, #D3D3D3);
+}
+
+body.rainy {
+    background: linear-gradient(135deg, #4682B4, #708090);
+}
+
+body.snowy {
+    background: linear-gradient(135deg, #F0F8FF, #E6E6FA);
+}
+
+body.night {
+    background: linear-gradient(135deg, #191970, #483D8B);
+}
+
+.weather-info {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.weather-icon {
+    font-size: 20px;
+}
+
+.calculator {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    max-width: 90vw;
+    transition: all 250ms ease-in-out;
+}
+
+.calculator:hover {
+    transform: scale(1.05);
+}
+
+
+.display {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: right;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: all 1.5s ease-in-out;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 18px;
+    margin-bottom: 5px;
+    min-height: 25px;
+}
+
+.current-operand {
+    color: white;
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    border-radius: 50%;
+    height: 60px;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.zero {
+    grid-column: span 2;
+    border-radius: 35px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+.btn.function {
+    background: rgba(255, 255, 255, 0.15);
+    color: #FFD700;
+}
+
+.btn.operator {
+    background: rgba(255, 255, 255, 0.25);
+    color: #FF6B6B;
+    font-size: 40px;
+    padding-bottom: 0.15em;
+    transition: all 250ms ease-in-out;
+}
+
+.btn.operator:hover {
+    background: #FF6B6B;
+    color: #ffffff;
+}
+
+.btn.equals {
+    background: linear-gradient(135deg, #FF6B6B, #FF8E8E);
+    color: white;
+    font-size: 40px;
+    padding-bottom: 0.15em;
+}
+
+.btn.equals:hover {
+    background: linear-gradient(135deg, #FF5252, #FF7676);
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .calculator {
+        width: 280px;
+        padding: 15px;
+    }
+    
+    .btn {
+        height: 55px;
+        font-size: 20px;
+    }
+    
+    .current-operand {
+        font-size: 30px;
+    }
+    
+    .weather-info {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+} 
