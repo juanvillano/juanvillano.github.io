@@ -59,6 +59,17 @@ body.night {
     font-size: 20px;
 }
 
+.back-button {
+    left: 20px;
+    width: 148px;
+}
+
+.back-button p a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
 .calculator {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(20px);
