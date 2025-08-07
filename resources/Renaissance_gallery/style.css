@@ -1,0 +1,246 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1a1a1a 100%);
+    color: #f5f5dc;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 100%;
+    padding: 0px;
+    position: relative;
+}
+
+/* Botón de regreso */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(145deg, #d4af37, #b8860b);
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    border: 2px solid transparent;
+}
+
+.back-button:hover {
+    background: linear-gradient(145deg, #b8860b, #d4af37);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+    border-color: #f5f5dc;
+}
+
+/* Contenedor de la galería */
+.gallery-container {
+    display: flex;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+    flex-flow: column;
+}
+
+.gallery-title {
+    margin-bottom: 40px;
+    padding: 20px 0;
+    font-size: 32px;
+    font-weight: 600;
+    color: #f5f5dc;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px;
+    background: linear-gradient(145deg, #d4af37, #b8860b);
+    -webkit-background-clip: text;
+}
+
+.gallery {
+    display: flex;
+    gap: 30px;
+    animation: scroll 60s linear infinite;
+    width: max-content;
+}
+
+/* Animación de scroll infinito */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pausar animación al hacer hover */
+.gallery:hover {
+    animation-play-state: paused;
+}
+
+/* Estilos de los retratos */
+.portrait {
+    flex-shrink: 0;
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.portrait:hover {
+    transform: scale(1.05);
+}
+
+.portrait-image {
+    width: 100%;
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    border: 3px solid #d4af37;
+    /*background: linear-gradient(145deg, #2d2d2d, #1a1a1a);*/
+    position: relative;
+}
+
+.portrait-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /*background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), rgba(184, 134, 11, 0.1));*/
+    z-index: 1;
+    pointer-events: none;
+}
+
+.portrait-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portrait:hover .portrait-image img {
+    transform: scale(1.1);
+}
+
+/* Nombre del artista */
+.artist-name {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f5f5dc;
+    /*text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);*/
+    letter-spacing: 0.5px;
+    background: linear-gradient(145deg, #d4af37, #b8860b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 5px 0;
+}
+
+/* Efectos de iluminación renacentista */
+.portrait::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    /*background: linear-gradient(45deg, 
+        rgba(212, 175, 55, 0.1) 0%, 
+        rgba(184, 134, 11, 0.05) 50%, 
+        rgba(212, 175, 55, 0.1) 100%);*/
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.portrait:hover::after {
+    opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .back-button {
+        top: 15px;
+        left: 15px;
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+    
+    .gallery-container {
+        margin-top: 70px;
+    }
+    
+    .portrait {
+        width: 220px;
+    }
+    
+    .portrait-image {
+        height: 280px;
+    }
+    
+    .artist-name {
+        font-size: 16px;
+    }
+    
+    .gallery {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .portrait {
+        width: 180px;
+    }
+    
+    .portrait-image {
+        height: 230px;
+    }
+    
+    .artist-name {
+        font-size: 14px;
+    }
+    
+    .gallery {
+        gap: 15px;
+    }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(145deg, #d4af37, #b8860b);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(145deg, #b8860b, #d4af37);
+} 
