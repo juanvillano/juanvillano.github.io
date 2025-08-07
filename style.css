@@ -157,8 +157,8 @@ body::after {
 
 /* Iconos de las tarjetas */
 .calculator-icon {
-    width: 120px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     padding: 10px;
@@ -198,8 +198,8 @@ body::after {
 }
 
 .gallery-icon {
-    width: 120px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
     position: relative;
     display: flex;
     align-items: center;
@@ -245,8 +245,8 @@ body::after {
 }
 
 .eagle-icon {
-    width: 120px;
-    height: 80px;
+    width: 200px;
+    height: 200px;
     position: relative;
     display: flex;
     align-items: center;
