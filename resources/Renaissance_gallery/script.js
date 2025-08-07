@@ -315,7 +315,7 @@ class InfiniteGallery {
         if (!this.backButton) return;
         
         this.addEventListeners(this.backButton, 'click', (e) => {
-            e.preventDefault();
+            //e.preventDefault();
             
             // Efecto visual
             this.backButton.style.transform = 'scale(0.95)';
@@ -324,8 +324,8 @@ class InfiniteGallery {
             }, 150);
             
             // Aquí se puede agregar lógica de navegación
-            console.log('Navigating back...');
-            // window.history.back(); // Ejemplo de navegación
+            //console.log('Navigating back...');
+            //window.history.back(); // Ejemplo de navegación
         });
     }
     
