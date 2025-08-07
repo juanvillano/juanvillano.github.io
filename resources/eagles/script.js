@@ -473,6 +473,7 @@ function showMenuModal() {
                 <a href="#gallery" class="menu-item">Galería</a>
                 <a href="#flight" class="menu-item">El Vuelo</a>
                 <a href="#types" class="menu-item">Especies</a>
+                <a href="../../index.html" class="back-button">Go back to home</a>
             </div>
         </div>
     `;
