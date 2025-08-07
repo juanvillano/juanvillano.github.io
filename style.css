@@ -165,6 +165,9 @@ body::after {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    background-image: url("./resources/images/calculator.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .calc-screen {
@@ -201,6 +204,10 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    background-image: url("./resources/images/gallery.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .photo-stack {
@@ -244,6 +251,10 @@ body::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    background-image: url("./resources/images/eagle.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .eagle-head {
